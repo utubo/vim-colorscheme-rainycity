@@ -1,6 +1,6 @@
-" * the name of colorscheme here *
-" Author: ***
-" GitHub: ***
+" rainy city
+" Author: utubo
+" GitHub: https://github.com/utubo" * the name of colorscheme here *
 " Notes:
 " Thx: This is based on https://github.com/ggalindezb/vim_colorscheme_template
 "
