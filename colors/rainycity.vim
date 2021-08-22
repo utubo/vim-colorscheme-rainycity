@@ -3,7 +3,7 @@
 " GitHub: https://github.com/utubo" * the name of colorscheme here *
 " Notes:
 " Thx: This is based on https://github.com/ggalindezb/vim_colorscheme_template
-"
+
 highlight clear
 if exists('syntax_on')
   syntax reset
@@ -30,26 +30,26 @@ let s:background = &background
 if has('gui_running')
   let s:term = 'gui'
   let s:n0 = '#2d3037'
-  let s:n1 = '#656766'
+  let s:n1 = '#525456'
   let s:n2 = '#9d9e96'
   let s:n3 = '#c3c3b6'
   let s:n4 = '#e9e8d6'
-  let s:b1 = '#354d4c'
+  let s:b1 = '#324345'
   let s:b2 = '#3d6b62'
   let s:b3 = '#427f70'
   let s:b4 = '#48937f'
   let s:b9 = '#48937f'
-  let s:g1 = '#315952'
+  let s:g1 = '#2f4b49'
   let s:g2 = '#35826d'
   let s:g3 = '#389d7f'
   let s:g4 = '#3bb991'
   let s:g9 = '#3bb991'
-  let s:y1 = '#505c52'
+  let s:y1 = '#444d49'
   let s:y2 = '#73896e' " not used
   let s:y3 = '#8aa781'
   let s:y4 = '#a2c594'
   let s:y9 = '#a2c594'
-  let s:r1 = '#604447'
+  let s:r1 = '#4f3d42'
   let s:r2 = '#945858' " not used
   let s:r3 = '#b66663'
   let s:r4 = '#d9746f'
@@ -58,26 +58,26 @@ else
   set t_Co=256
   let s:term = 'cterm'
   let s:n0 = '236'
-  let s:n1 = '242'
+  let s:n1 = '240'
   let s:n2 = '247'
   let s:n3 = '250'
   let s:n4 = '187'
-  let s:b1 = '238'
+  let s:b1 = '237'
   let s:b2 = '66'
   let s:b3 = '66'
   let s:b4 = '72'
   let s:b9 = '72'
-  let s:g1 = '238'
+  let s:g1 = '237'
   let s:g2 = '72'
   let s:g3 = '72'
   let s:g4 = '72'
   let s:g9 = '72'
-  let s:y1 = '240'
+  let s:y1 = '232'
   let s:y2 = '65' " not used
   let s:y3 = '108'
   let s:y4 = '151'
   let s:y9 = '151'
-  let s:r1 = '240'
+  let s:r1 = '238'
   let s:r2 = '95' " not used
   let s:r3 = '131'
   let s:r4 = '167'
@@ -167,7 +167,7 @@ hi! link SpecialKey NonText
 exe 'hi Function'      s:fg s:b2
 exe 'hi Identifier '   s:fg s:n3
 exe 'hi Constant'      s:fg s:b2
-exe 'hi String'        s:fg s:b3 s:bg s:b1
+exe 'hi String'        s:fg s:b3 s:bg s:n1
 exe 'hi Character'     s:fg s:b2
 exe 'hi Number'        s:fg s:b2
 hi! link Boolean Number
