@@ -1,6 +1,6 @@
-" rainy city
-" Author: utubo
-" GitHub: https://github.com/utubo
+" * the name of colorscheme here *
+" Author: ***
+" GitHub: ***
 " Notes:
 " Thx: This is based on https://github.com/ggalindezb/vim_colorscheme_template
 "
@@ -22,7 +22,7 @@ let s:background = &background
 "   r: error(red)
 " opacity:
 "   0: 0% Default BG (only n0)
-"   1: 40% BG
+"   1: 30% BG
 "   2: 60% Middle FG
 "   3: 80% Default FG
 "   4: 100% Highlight (eg. b4=cursor,g4=search)
@@ -30,26 +30,26 @@ let s:background = &background
 if has('gui_running')
   let s:term = 'gui'
   let s:n0 = '#2d3037'
-  let s:n1 = '#787976'
+  let s:n1 = '#656766'
   let s:n2 = '#9d9e96'
   let s:n3 = '#c3c3b6'
   let s:n4 = '#e9e8d6'
-  let s:b1 = '#375753'
+  let s:b1 = '#354d4c'
   let s:b2 = '#3d6b62'
   let s:b3 = '#427f70'
   let s:b4 = '#48937f'
   let s:b9 = '#48937f'
-  let s:g1 = '#32665b'
+  let s:g1 = '#315952'
   let s:g2 = '#35826d'
   let s:g3 = '#389d7f'
   let s:g4 = '#3bb991'
   let s:g9 = '#3bb991'
-  let s:y1 = '#5b6b5c'
+  let s:y1 = '#505c52'
   let s:y2 = '#73896e' " not used
   let s:y3 = '#8aa781'
   let s:y4 = '#a2c594'
   let s:y9 = '#a2c594'
-  let s:r1 = '#714b4d'
+  let s:r1 = '#604447'
   let s:r2 = '#945858' " not used
   let s:r3 = '#b66663'
   let s:r4 = '#d9746f'
@@ -58,7 +58,7 @@ else
   set t_Co=256
   let s:term = 'cterm'
   let s:n0 = '236'
-  let s:n1 = '243'
+  let s:n1 = '242'
   let s:n2 = '247'
   let s:n3 = '250'
   let s:n4 = '187'
@@ -67,17 +67,17 @@ else
   let s:b3 = '66'
   let s:b4 = '72'
   let s:b9 = '72'
-  let s:g1 = '73'
+  let s:g1 = '238'
   let s:g2 = '72'
   let s:g3 = '72'
   let s:g4 = '72'
   let s:g9 = '72'
-  let s:y1 = '242'
+  let s:y1 = '240'
   let s:y2 = '65' " not used
   let s:y3 = '108'
   let s:y4 = '151'
   let s:y9 = '151'
-  let s:r1 = '95'
+  let s:r1 = '240'
   let s:r2 = '95' " not used
   let s:r3 = '131'
   let s:r4 = '167'
@@ -167,7 +167,7 @@ hi! link SpecialKey NonText
 exe 'hi Function'      s:fg s:b2
 exe 'hi Identifier '   s:fg s:n3
 exe 'hi Constant'      s:fg s:b2
-exe "hi String"        s:fg s:b2 s:bg s:b1
+exe 'hi String'        s:fg s:b3 s:bg s:b1
 exe 'hi Character'     s:fg s:b2
 exe 'hi Number'        s:fg s:b2
 hi! link Boolean Number
@@ -186,6 +186,7 @@ exe 'hi Comment'       s:fg s:g2
 exe 'hi SpecialComment' s:fg s:g2 s:italic
 exe 'hi SpecialChar'   s:fg s:b3
 exe 'hi Tag'           s:fg s:g3
+exe 'hi Type'          s:fg s:g4
 exe 'hi Delimiter'     s:fg s:y4
 exe 'hi Debug'         s:fg s:n2
 hi! link Operator Normal
