@@ -1,6 +1,6 @@
 " rainy city
 " Author: utubo
-" GitHub: https://github.com/utubo" * the name of colorscheme here *
+" GitHub: https://github.com/utubo
 " Notes:
 " Thx: This is based on https://github.com/ggalindezb/vim_colorscheme_template
 
