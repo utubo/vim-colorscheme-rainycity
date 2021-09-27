@@ -1,4 +1,4 @@
-" * yakiniku *
+" * rainycity *
 " Author: utubo
 " Notes:
 " Thx: This is based on https://github.com/ggalindezb/vim_colorscheme_template
@@ -9,7 +9,6 @@ if exists('syntax_on')
 endif
 let s:colors_name = expand('<sfile>:t:r')
 let g:colors_name = s:colors_name
-let s:background = &background
 
 " COLORS
 "   <type><opacity>
@@ -29,58 +28,58 @@ let s:background = &background
 if has('gui_running')
   let s:term = 'gui'
   let s:n0 = '#2d3037'
-  let s:n1 = '#57585a'
-  let s:n2 = '#aba9a2'
-  let s:n3 = '#d5d1c6'
-  let s:n4 = '#fffaea'
-  let s:b1 = '#524a40'
-  let s:b2 = '#9d7e53'
-  let s:b3 = '#c3985c'
-  let s:b4 = '#e9b266'
-  let s:b9 = '#e9b266'
-  let s:g1 = '#433c39'
-  let s:g2 = '#70543d'
-  let s:g3 = '#86603f'
-  let s:g4 = '#9d6c42'
-  let s:g9 = '#9d6c42'
-  let s:y1 = '#4a3836'
-  let s:y2 = '#864934' " not used
-  let s:y3 = '#a45233'
-  let s:y4 = '#c25b32'
-  let s:y9 = '#c25b32'
-  let s:r1 = '#482b31'
-  let s:r2 = '#7e2225' " not used
-  let s:r3 = '#991e1f'
-  let s:r4 = '#b41a1a'
-  let s:r9 = '#b41a1a'
+  let s:n1 = '#525456'
+  let s:n2 = '#9d9e96'
+  let s:n3 = '#c3c3b6'
+  let s:n4 = '#e9e8d6'
+  let s:b1 = '#324345'
+  let s:b2 = '#3d6b62'
+  let s:b3 = '#427f70'
+  let s:b4 = '#48937f'
+  let s:b9 = '#48937f'
+  let s:g1 = '#2f4b49'
+  let s:g2 = '#35826d'
+  let s:g3 = '#389d7f'
+  let s:g4 = '#3bb991'
+  let s:g9 = '#3bb991'
+  let s:y1 = '#444d49'
+  let s:y2 = '#73896e' " not used
+  let s:y3 = '#8aa781'
+  let s:y4 = '#a2c594'
+  let s:y9 = '#a2c594'
+  let s:r1 = '#4f3d42'
+  let s:r2 = '#945858' " not used
+  let s:r3 = '#b66663'
+  let s:r4 = '#d9746f'
+  let s:r9 = '#d9746f'
 else
   set t_Co=256
   let s:term = 'cterm'
   let s:n0 = '236'
   let s:n1 = '240'
-  let s:n2 = '248'
-  let s:n3 = '252'
-  let s:n4 = '230'
-  let s:b1 = '232'
-  let s:b2 = '137'
-  let s:b3 = '179'
-  let s:b4 = '179'
-  let s:b9 = '179'
-  let s:g1 = '238'
-  let s:g2 = '240'
-  let s:g3 = '137'
-  let s:g4 = '137'
-  let s:g9 = '137'
-  let s:y1 = '238'
-  let s:y2 = '137' " not used
-  let s:y3 = '137'
-  let s:y4 = '173'
-  let s:y9 = '173'
-  let s:r1 = '237'
-  let s:r2 = '124' " not used
-  let s:r3 = '124'
-  let s:r4 = '160'
-  let s:r9 = '160'
+  let s:n2 = '247'
+  let s:n3 = '250'
+  let s:n4 = '187'
+  let s:b1 = '237'
+  let s:b2 = '66'
+  let s:b3 = '66'
+  let s:b4 = '72'
+  let s:b9 = '72'
+  let s:g1 = '237'
+  let s:g2 = '72'
+  let s:g3 = '72'
+  let s:g4 = '72'
+  let s:g9 = '72'
+  let s:y1 = '232'
+  let s:y2 = '65' " not used
+  let s:y3 = '108'
+  let s:y4 = '151'
+  let s:y9 = '151'
+  let s:r1 = '238'
+  let s:r2 = '95' " not used
+  let s:r3 = '131'
+  let s:r4 = '167'
+  let s:r9 = '167'
 endif
 
 if &background == 'light'
@@ -93,10 +92,13 @@ endif
 
 let s:fg     = s:term.'fg='
 let s:bg     = s:term.'bg='
+let s:sp     = s:term ==# 'gui' ? 'guisp=' : 'ctermul='
 let s:style  = s:term.'='
 let s:none   = s:style.'NONE'
 let s:bold   = s:style.'bold'
 let s:italic = s:style.'italic'
+let s:underline = s:style.'underline'
+let s:undercurl = s:style.'undercurl'
 
 " --------
 " - Base -
@@ -104,10 +106,9 @@ let s:italic = s:style.'italic'
 exe 'hi Normal'        s:fg s:n3 s:bg s:n0
 exe 'hi Cursor'        s:fg s:n4 s:bg s:b4
 exe 'hi CursorIM'      s:fg s:n4 s:bg s:y4
-exe 'hi CursorLine'    s:bg s:n1
+exe 'hi CursorLine'    s:bg s:n1 s:none
 exe 'hi LineNr'        s:fg s:n2 s:bg s:n1
-exe 'hi CursorLineNR'  s:fg s:n4 s:bg s:n2
-exe 'hi CursorLine'    s:bg s:n1
+exe 'hi CursorLineNR'  s:fg s:n4 s:bg s:n2 s:none
 
 " -----------------
 " - Number column -
@@ -122,8 +123,8 @@ exe 'hi Folded'        s:fg s:n2 s:bg s:n0
 " -------------------------
 exe 'hi VertSplit'     s:bg s:n1
 exe 'hi ColorColumn'   s:fg s:n2 s:bg s:n1
-exe 'hi TabLine'       s:fg s:n2 s:bg s:n1
-exe 'hi TabLineFill'   s:bg s:n1
+exe 'hi TabLine'       s:fg s:n2 s:bg s:n1 s:none
+exe 'hi TabLineFill'   s:bg s:n1 s:none
 exe 'hi TabLineSel'    s:fg s:g3 s:bg s:n0 s:bold
 
 " -------------------------------
@@ -147,7 +148,7 @@ hi! link WildMenu Visual
 " --------------
 " - Visual aid -
 " --------------
-exe 'hi MatchParen'    s:fg s:b4 s:bg s:n0
+exe 'hi MatchParen'    s:fg s:b4 s:bg s:n1
 exe 'hi Visual'        s:fg s:n4 s:bg s:b2 s:none
 exe 'hi VisualNOS'     s:fg s:n3 s:bg s:n1 s:none
 exe 'hi NonText'       s:fg s:n1 s:none
@@ -216,10 +217,10 @@ exe 'hi PmenuThumb'    s:bg s:b3
 " ------------
 " - Spelling -
 " ------------
-exe 'hi SpellBad'      s:fg s:r3 s:bg s:r1 s:style 'undercurl'
-exe 'hi SpellCap'      s:fg s:y3 s:bg s:n0 s:style 'undercurl'
-exe 'hi SpellLocal'    s:fg s:g3 s:bg s:n0
-exe 'hi SpellRare'     s:fg s:b3 s:bg s:n0
+exe 'hi SpellBad'      s:fg s:r3 s:bg s:r1 s:sp s:r4 s:undercurl
+exe 'hi SpellCap'      s:fg s:y3 s:bg s:n0 s:sp s:y4 s:undercurl
+exe 'hi SpellLocal'    s:fg s:g3 s:bg s:n0 s:sp s:g4 s:undercurl
+exe 'hi SpellRare'     s:fg s:b3 s:bg s:n0 s:sp s:b4 s:undercurl
 
 " ---------------------
 " - Specific settings -
@@ -263,5 +264,3 @@ endfunction
 
 exe 'augroup CustomSyntax_' . s:colors_name . '|au!|au ColorScheme,Syntax * call <SID>CustomSyntax()|augroup END'
 call s:CustomSyntax()
-
-exe 'set background='.s:background
