@@ -1,4 +1,4 @@
-# vim-colorscheme-rainycity
+# rainycity.vim
 
 This is created with vim-6colors.
 
